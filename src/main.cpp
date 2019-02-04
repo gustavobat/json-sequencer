@@ -26,10 +26,11 @@ int main() {
 
 
     json j = caller.getJSON();
-        std::string filePath = j[0][1].get<std::string>();
-        std::cout << filePath << std::endl;
+    std::string filePath = j[0][1].get<std::string>();
+    std::cout << filePath << std::endl;
 
-        int initialValue = j[0][1].get<int>();
-        std::cout << initialValue << std::endl;
+    int initialValue = j[1][2].get<int>();
+    std::cout << initialValue << std::endl;
+
     return 0;
 }
