@@ -21,8 +21,15 @@ int main() {
 
     std::cout << ":: The file was successfully read! Check it below: " << std::endl;
 
-    TJSONFunctionCaller blob(path);
-    blob.PrintJSON(std::cout);
+    TJSONFunctionCaller caller(path);
+    caller.PrintJSON(std::cout);
 
+
+    json j = caller.getJSON();
+        std::string filePath = j[0][1].get<std::string>();
+        std::cout << filePath << std::endl;
+
+        int initialValue = j[0][1].get<int>();
+        std::cout << initialValue << std::endl;
     return 0;
 }

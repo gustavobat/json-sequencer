@@ -15,3 +15,7 @@ void TJSONFunctionCaller::PrintJSON(std::ostream& output) {
     output << std::setw(4) << commandFile << std::endl;
     output << std::flush;
 }
+
+const json &TJSONFunctionCaller::getJSON() const {
+    return commandFile;
+}

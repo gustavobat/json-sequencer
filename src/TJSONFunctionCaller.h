@@ -11,10 +11,10 @@
 #include <string>
 #include <map>
 
+#include "StubFunctions.h"
+
 #include "json.hpp"
 using json = nlohmann::json;
-
-#include "StubFunctions.h"
 
 class TJSONFunctionCaller {
 
@@ -23,7 +23,11 @@ public:
 
     ~TJSONFunctionCaller();
 
+    void CallFunctions();
+
     void PrintJSON(std::ostream& output);
+
+    const json &getJSON() const;
 
 private:
     json commandFile;
