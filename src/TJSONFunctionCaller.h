@@ -5,22 +5,28 @@
 #ifndef TJSONFUNCTIONCALLER_H
 #define TJSONFUNCTIONCALLER_H
 
+#include <iostream>
+#include <iomanip>
+#include <fstream>
 #include <string>
 #include <map>
 
 #include "json.hpp"
+using json = nlohmann::json;
+
+#include "StubFunctions.h"
 
 class TJSONFunctionCaller {
 
 public:
-    TJSONFunctionCaller();
+    TJSONFunctionCaller(std::string jsonPath);
 
     ~TJSONFunctionCaller();
 
-private:
-    nlohmann::json commandFile;
-    std::map<std::string, std::string> fNicknameToPath;
+    void PrintJSON(std::ostream& output);
 
+private:
+    json commandFile;
 };
 
 #endif

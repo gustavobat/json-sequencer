@@ -9,3 +9,6 @@ file(GLOB sources src/*.cpp)
 
 set(main_SRCS ${sources} ${headers})
 add_executable(json_sequencer ${main_SRCS})
+
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+configure_file(input.json ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
