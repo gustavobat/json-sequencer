@@ -18,6 +18,7 @@ public:
     ~TJSONFunctionCaller();
 
 private:
+    nlohmann::json commandFile;
     std::map<std::string, std::string> fNicknameToPath;
 
 };
