@@ -23,7 +23,9 @@ public:
 
     ~TJSONFunctionCaller();
 
-    void CallFunctions();
+    void CallAllFunctions();
+
+    void CallFunction(json J) const;
 
     void PrintJSON(std::ostream& output);
 

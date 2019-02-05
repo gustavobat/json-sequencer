@@ -8,8 +8,6 @@ int main() {
     std::string path;
     std::ifstream input;
 
-    //std::cout << ":: Please type the path of the JSON input file:" << std::endl;
-
     path = "input.json";
     input.open(path.c_str());
 
@@ -19,18 +17,13 @@ int main() {
         input.open(path.c_str());
     }
 
-    std::cout << ":: The file was successfully read! Check it below: " << std::endl;
+    std::cout << ":: The JSON file was successfully read! Check it below: " << std::endl << std::endl;
 
     TJSONFunctionCaller caller(path);
     caller.PrintJSON(std::cout);
 
-
-    json j = caller.getJSON();
-    std::string filePath = j[0][1].get<std::string>();
-    std::cout << filePath << std::endl;
-
-    int initialValue = j[1][2].get<int>();
-    std::cout << initialValue << std::endl;
+    std::cout << std::endl << ":: The following functions would be called: " << std::endl << std::endl;
+    caller.CallAllFunctions();
 
     return 0;
 }
