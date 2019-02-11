@@ -3,5 +3,7 @@
   ["open", "/home/blob2", "cp2"],
   ["select", "cp1", 203, 1023],
   ["select", "cp1", 243, 1423],
+  ["select", "cp1", 243, 1423],
+  ["select", "cp1", 243, 1423],
   ["adjust", "K"]
 ]
